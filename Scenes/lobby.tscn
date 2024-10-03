@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bklatwqm2ra6y"]
+[gd_scene load_steps=11 format=3 uid="uid://bklatwqm2ra6y"]
 
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_s25cb"]
 [ext_resource type="Texture2D" uid="uid://c6btw7ltadtai" path="res://art/Bushes-16x16.png" id="2_74edt"]
 [ext_resource type="Texture2D" uid="uid://cyvruub73wgwh" path="res://art/TileSet-36x36.png" id="3_3sg5i"]
 [ext_resource type="Texture2D" uid="uid://bumu3ytgh0sgd" path="res://art/House1.png" id="4_x1g2t"]
 [ext_resource type="Texture2D" uid="uid://cee216odt7dsn" path="res://art/Tree1.png" id="5_q0bf6"]
+[ext_resource type="PackedScene" uid="uid://qr1qmwwdvj8w" path="res://Scenes/player.tscn" id="6_gs4nk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_804wg"]
 texture = ExtResource("2_74edt")
@@ -98,3 +99,11 @@ texture = ExtResource("5_q0bf6")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(5, -4)
 polygon = PackedVector2Array(354, 7, 382, 7, 382, 94, 389, 94, 377, -194, 405, -183, 402, 113, -245, 98, -203, -209, -177, -208, -177, 5)
+
+[node name="Player" parent="." instance=ExtResource("6_gs4nk")]
+position = Vector2(25, -19)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-15, -44)
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
