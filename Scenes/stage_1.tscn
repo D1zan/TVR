@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://h5funuah41ix"]
+[gd_scene load_steps=9 format=3 uid="uid://h5funuah41ix"]
 
+[ext_resource type="Script" path="res://Scripts/stage_1.gd" id="1_cnl87"]
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_e3o1i"]
 [ext_resource type="Texture2D" uid="uid://cyvruub73wgwh" path="res://art/TileSet-36x36.png" id="2_diyot"]
+[ext_resource type="PackedScene" uid="uid://qr1qmwwdvj8w" path="res://Scenes/player.tscn" id="3_yevh6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6euve"]
 texture = ExtResource("2_diyot")
@@ -43,9 +45,11 @@ size = Vector2(377.422, 20)
 size = Vector2(20, 128.51)
 
 [node name="stage1" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_cnl87")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(111.5, 0.499992)
+position = Vector2(112, -174)
 scale = Vector2(1.93947, 1.772)
 texture = ExtResource("1_e3o1i")
 
@@ -72,3 +76,6 @@ shape = SubResource("RectangleShape2D_waxq8")
 position = Vector2(192.578, -60.1016)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_waxq8")
+
+[node name="Player" parent="." instance=ExtResource("3_yevh6")]
+position = Vector2(-149, -23)

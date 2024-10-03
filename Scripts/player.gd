@@ -10,7 +10,7 @@ var gravity = 900.0
 var weapon_equip: bool 
 
 func _ready():
-	weapon_equip = true
+	pass
 
 
 func _physics_process(delta: float) -> void:
@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	handle_movement_animation(direction)
 
 func handle_movement_animation(dir):
+	var weapon_equip = Global.playerWeaponEquipped
 	if !weapon_equip:
 		if is_on_floor():
 			if !velocity:

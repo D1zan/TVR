@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bklatwqm2ra6y"]
+[gd_scene load_steps=13 format=3 uid="uid://bklatwqm2ra6y"]
 
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_s25cb"]
+[ext_resource type="Script" path="res://Scripts/lobby.gd" id="1_wvlxn"]
 [ext_resource type="Texture2D" uid="uid://c6btw7ltadtai" path="res://art/Bushes-16x16.png" id="2_74edt"]
 [ext_resource type="Texture2D" uid="uid://cyvruub73wgwh" path="res://art/TileSet-36x36.png" id="3_3sg5i"]
 [ext_resource type="Texture2D" uid="uid://bumu3ytgh0sgd" path="res://art/House1.png" id="4_x1g2t"]
@@ -65,7 +66,10 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_u0on4")
 
+[sub_resource type="GDScript" id="GDScript_ejmiq"]
+
 [node name="Lobby" type="Node2D"]
+script = ExtResource("1_wvlxn")
 
 [node name="Sprites" type="StaticBody2D" parent="."]
 
@@ -100,10 +104,11 @@ texture = ExtResource("5_q0bf6")
 position = Vector2(5, -4)
 polygon = PackedVector2Array(354, 7, 382, 7, 382, 94, 389, 94, 377, -194, 405, -183, 402, 113, -245, 98, -203, -209, -177, -208, -177, 5)
 
-[node name="Player" parent="." instance=ExtResource("6_gs4nk")]
-position = Vector2(25, -19)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-15, -44)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(10, -63)
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
+script = SubResource("GDScript_ejmiq")
+
+[node name="Player" parent="." instance=ExtResource("6_gs4nk")]
+position = Vector2(25, -19)
