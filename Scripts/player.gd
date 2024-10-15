@@ -20,7 +20,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	weapon_equip = Global.playerWeaponEquipped
-
+	Global.playerDamageZone = deal_damage_zone
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	  
