@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://h5funuah41ix"]
+[gd_scene load_steps=10 format=3 uid="uid://h5funuah41ix"]
 
 [ext_resource type="Script" path="res://Scripts/stage_1.gd" id="1_cnl87"]
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_e3o1i"]
 [ext_resource type="Texture2D" uid="uid://cyvruub73wgwh" path="res://art/TileSet-36x36.png" id="2_diyot"]
 [ext_resource type="PackedScene" uid="uid://qr1qmwwdvj8w" path="res://Scenes/player.tscn" id="3_yevh6"]
+[ext_resource type="PackedScene" uid="uid://bx5ey80xltn6k" path="res://Scenes/bat_enemy.tscn" id="5_57q7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6euve"]
 texture = ExtResource("2_diyot")
@@ -79,3 +80,6 @@ shape = SubResource("RectangleShape2D_waxq8")
 
 [node name="Player" parent="." instance=ExtResource("3_yevh6")]
 position = Vector2(-149, -23)
+
+[node name="BatEnemy" parent="." instance=ExtResource("5_57q7i")]
+position = Vector2(10, -91)
