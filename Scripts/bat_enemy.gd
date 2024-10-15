@@ -5,11 +5,17 @@ var dir: Vector2
  
 var is_bat_chase: bool
 
+var player: CharacterBody2D
+
 func _ready():
-	is_bat_chase = false
+	is_bat_chase = true
 	
 func move(delta):
-	if !is_bat_chase:
+	if is_bat_chase:
+		player = Global.playerBody
+		velocity = position.direction_to(player.position) * speed
+		dir.x = abs(velocity.x)/ velocity.x
+	elif !is_bat_chase:
 		velocity += dir * speed  *delta
 	move_and_slide()
 	
@@ -18,10 +24,9 @@ func _process(delta):
 		handle_animation()
 
 func _on_timer_timeout():
-	$Timer.wait_time = choose([1.0,1.5,2.0])
+	$Timer.wait_time = choose([0.5,0.8])
 	if !is_bat_chase:
 		dir = choose([Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN])
-		print(dir)
 
 func handle_animation():
 	var animated_sprite = $AnimatedSprite2D

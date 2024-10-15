@@ -65,21 +65,28 @@ scale = Vector2(1.93947, 1.772)
 
 [node name="ground" type="CollisionShape2D" parent="collisions"]
 position = Vector2(1.28901, 12.1332)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lxs4n")
 
 [node name="leftwall" type="CollisionShape2D" parent="collisions"]
 position = Vector2(-195.672, -61.8736)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_waxq8")
 
 [node name="rightwall" type="CollisionShape2D" parent="collisions"]
 position = Vector2(192.578, -60.1016)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_waxq8")
 
 [node name="Player" parent="." instance=ExtResource("3_yevh6")]
-position = Vector2(-149, -23)
+position = Vector2(-146, -35)
 
 [node name="BatEnemy" parent="." instance=ExtResource("5_57q7i")]
-position = Vector2(10, -91)
+position = Vector2(60, -54)
+
+[node name="BatOnlyCollision" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BatOnlyCollision"]
+position = Vector2(-4, 10)
+polygon = PackedVector2Array(-243, -24, -44, -23, 469, -22, 464, -191, 461, -310, 454, -379, 327, -369, 196, -378, 56, -381, -70, -378, -194, -372, -255, -229, -244, -49, -315, -51, -244, -392, -37, -430, 186, -439, 509, -442, 561, 62, 344, 95, -39, 103, -337, 43, -246, -19)
+
+[node name="BatEnemy2" parent="." instance=ExtResource("5_57q7i")]

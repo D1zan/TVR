@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://qr1qmwwdvj8w"]
+[gd_scene load_steps=63 format=3 uid="uid://qr1qmwwdvj8w"]
 
 [ext_resource type="Texture2D" uid="uid://ub0dgh7045jo" path="res://art/Dacian Warrior Animated Pixel-Art 2D/Idle/50x50/Idle Sprite 0.png" id="1_uqlro"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_v2xpx"]
@@ -238,7 +238,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"air_attack",
-"speed": 4.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -410,14 +410,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_a72e4"]
 radius = 5.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0cw6x"]
+radius = 8.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_v2xpx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_848sb")
 animation = &"double_attack"
-frame = 8
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 14)
@@ -430,3 +431,12 @@ limit_top = -252
 limit_right = 461
 limit_bottom = 98
 position_smoothing_enabled = true
+
+[node name="DealDamageZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageZone"]
+position = Vector2(12, 2)
+shape = SubResource("CircleShape2D_0cw6x")
+disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
