@@ -42,6 +42,7 @@ func _physics_process(delta: float) -> void:
 				attack_type = "double"
 			else:
 				attack_type = "air"
+			set_damage(attack_type)
 			handle_attack_animation(attack_type)
 
 	move_and_slide()
@@ -99,3 +100,13 @@ func toggle_damage_collisions(attack_type):
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	current_attack = false
+
+func set_damage(attack_type):
+	var current_damage_to_deal: int
+	if attack_type == "single":
+		current_damage_to_deal = 8
+	elif attack_type == "double":
+		current_damage_to_deal = 16
+	elif attack_type == "air":
+		current_damage_to_deal = 20
+	Global.playerDamageAmount = current_damage_to_deal
