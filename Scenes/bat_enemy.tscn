@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bx5ey80xltn6k"]
+[gd_scene load_steps=31 format=3 uid="uid://bx5ey80xltn6k"]
 
 [ext_resource type="Texture2D" uid="uid://57ek65ntj0u1" path="res://art/Bat/Standard/BatStandard_Attack.png" id="1_3pedc"]
 [ext_resource type="Script" path="res://Scripts/bat_enemy.gd" id="1_74ia7"]
@@ -182,6 +182,9 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_nqjpc"]
 radius = 7.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_et8ne"]
+radius = 9.0
+
 [node name="BatEnemy" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
@@ -203,6 +206,12 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bat hitbox"]
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_nqjpc")
+
+[node name="BatDealDamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BatDealDamageArea"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_et8ne")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Bat hitbox" to="." method="_on_bat_hitbox_area_entered"]

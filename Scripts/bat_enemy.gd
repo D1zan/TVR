@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name BatEnemy
+
 const speed = 30
 var dir: Vector2
  
@@ -13,6 +15,7 @@ var health_min = 0
 var dead = false 
 var taking_damage = false
 var is_roaming: bool
+var damage_to_deal = 10
 
 func _ready():
 	is_bat_chase = true
@@ -22,7 +25,7 @@ func move(delta):
 
 	if !dead:
 		is_roaming = true
-		if !taking_damage and is_bat_chase:
+		if !taking_damage and is_bat_chase and Global.playerAlive:
 			velocity = position.direction_to(player.position) * speed
 			dir.x = abs(velocity.x)/ velocity.x
 		elif taking_damage:
@@ -37,6 +40,12 @@ func move(delta):
 	move_and_slide()
 	
 func _process(delta):
+		Global.batDamageAmount = damage_to_deal
+		Global.batDamageZone = $BatDealDamageArea
+		if Global.playerAlive:
+			is_bat_chase = true
+		elif !Global.playerAlive:
+			is_bat_chase = false
 		if  is_on_floor() and dead:
 			await get_tree().create_timer(3.0).timeout
 			self.queue_free()
