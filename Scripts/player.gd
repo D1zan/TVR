@@ -6,7 +6,7 @@ extends CharacterBody2D
 const speed = 300.0
 const jump_power = -350.0
 
-var gravity = 900.0
+var gravity = 900
 
 var attack_type: String
 var current_attack: bool
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	weapon_equip = Global.playerWeaponEquipped
 	Global.playerDamageZone = deal_damage_zone
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += gravity * delta
 	if !dead:
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = jump_power

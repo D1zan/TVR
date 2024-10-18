@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://h5funuah41ix"]
+[gd_scene load_steps=11 format=3 uid="uid://h5funuah41ix"]
 
 [ext_resource type="Script" path="res://Scripts/stage_1.gd" id="1_cnl87"]
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_e3o1i"]
 [ext_resource type="Texture2D" uid="uid://cyvruub73wgwh" path="res://art/TileSet-36x36.png" id="2_diyot"]
 [ext_resource type="PackedScene" uid="uid://qr1qmwwdvj8w" path="res://Scenes/player.tscn" id="3_yevh6"]
 [ext_resource type="PackedScene" uid="uid://bx5ey80xltn6k" path="res://Scenes/bat_enemy.tscn" id="5_57q7i"]
+[ext_resource type="PackedScene" uid="uid://6ybuysjy0ue7" path="res://Scripts/toxic_frog.tscn" id="6_dhseg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6euve"]
 texture = ExtResource("2_diyot")
@@ -78,8 +79,13 @@ shape = SubResource("RectangleShape2D_waxq8")
 [node name="Player" parent="." instance=ExtResource("3_yevh6")]
 position = Vector2(-146, -35)
 
+[node name="toxicFrog" parent="." instance=ExtResource("6_dhseg")]
+position = Vector2(126, -49)
+
 [node name="BatEnemy" parent="." instance=ExtResource("5_57q7i")]
 position = Vector2(60, -54)
+
+[node name="BatEnemy2" parent="." instance=ExtResource("5_57q7i")]
 
 [node name="BatOnlyCollision" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -88,5 +94,3 @@ collision_mask = 2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BatOnlyCollision"]
 position = Vector2(-4, 10)
 polygon = PackedVector2Array(-243, -24, -44, -23, 469, -22, 464, -191, 461, -310, 454, -379, 327, -369, 196, -378, 56, -381, -70, -378, -194, -372, -255, -229, -244, -49, -315, -51, -244, -392, -37, -430, 186, -439, 509, -442, 561, 62, 344, 95, -39, 103, -337, 43, -246, -19)
-
-[node name="BatEnemy2" parent="." instance=ExtResource("5_57q7i")]
