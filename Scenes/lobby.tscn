@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bklatwqm2ra6y"]
+[gd_scene load_steps=14 format=3 uid="uid://bklatwqm2ra6y"]
 
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_s25cb"]
 [ext_resource type="Script" path="res://Scripts/lobby.gd" id="1_wvlxn"]
@@ -68,6 +68,9 @@ sources/0 = SubResource("TileSetAtlasSource_u0on4")
 
 [sub_resource type="GDScript" id="GDScript_ejmiq"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x36gl"]
+size = Vector2(58, 187)
+
 [node name="Lobby" type="Node2D"]
 script = ExtResource("1_wvlxn")
 
@@ -105,10 +108,18 @@ position = Vector2(5, -4)
 polygon = PackedVector2Array(354, 7, 382, 7, 382, 94, 389, 94, 377, -194, 405, -183, 402, 113, -245, 98, -203, -209, -177, -208, -177, 5)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(10, -63)
+position = Vector2(163, -62)
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 script = SubResource("GDScript_ejmiq")
 
 [node name="Player" parent="." instance=ExtResource("6_gs4nk")]
 position = Vector2(25, -19)
+
+[node name="LoadDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoadDetect"]
+position = Vector2(398, -91)
+shape = SubResource("RectangleShape2D_x36gl")
+
+[connection signal="body_entered" from="LoadDetect" to="." method="_on_load_detect_body_entered"]

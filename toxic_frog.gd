@@ -27,6 +27,8 @@ func _process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += gravity *delta
 		velocity.x = 0
+	Global.frogDamageAmount	= damage_to_deal
+	Global.frogDamageZone = $frogDealDamageArea
 	player = Global.playerBody
 	move(delta)
 	handle_animation()

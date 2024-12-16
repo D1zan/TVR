@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player 
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var deal_damage_zone = $DealDamageZone
 
@@ -64,6 +66,8 @@ func check_hitbox():
 		var hitbox = hitbox_areas.front()
 		if hitbox.get_parent() is BatEnemy:
 			damage = Global.batDamageAmount
+		elif hitbox.get_parent() is FrogEnemy:
+			damage = Global.frogDamageAmount	
 	if can_take_damage:
 		take_damage(damage)
 

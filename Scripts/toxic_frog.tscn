@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://6ybuysjy0ue7"]
+[gd_scene load_steps=41 format=3 uid="uid://6ybuysjy0ue7"]
 
 [ext_resource type="Script" path="res://toxic_frog.gd" id="1_ow64a"]
 [ext_resource type="Texture2D" uid="uid://b7gjt0grxogk" path="res://art/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Sheet.png" id="2_0g665"]
@@ -275,6 +275,8 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_jsa10"]
 radius = 9.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nsxlt"]
+
 [node name="toxicFrog" type="CharacterBody2D"]
 script = ExtResource("1_ow64a")
 
@@ -293,6 +295,11 @@ autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="froghitbox"]
 shape = SubResource("CircleShape2D_jsa10")
+
+[node name="frogDealDamageArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frogDealDamageArea"]
+shape = SubResource("CircleShape2D_nsxlt")
 
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
 [connection signal="area_entered" from="froghitbox" to="." method="_on_froghitbox_area_entered"]

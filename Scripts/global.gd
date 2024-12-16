@@ -1,5 +1,6 @@
 extends Node
 
+var gameStarted: bool
 var playerBody: CharacterBody2D
 var playerWeaponEquipped: bool
 
@@ -9,3 +10,6 @@ var playerDamageAmount: int
 
 var batDamageZone = Area2D
 var batDamageAmount: int
+
+var frogDamageZone = Area2D
+var frogDamageAmount: int
