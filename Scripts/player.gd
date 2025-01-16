@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-class_name Player 
+class_name Player  
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var deal_damage_zone = $DealDamageZone
 
 const speed = 300.0
-const jump_power = -350.0
+const jump_power = -350.0 
 
 var gravity = 900
 
