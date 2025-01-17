@@ -32,16 +32,15 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	weapon_equip = Global.playerWeaponEquipped
 	Global.playerDamageZone = deal_damage_zone
-	if not is_on_floor():
-		velocity.y += gravity * delta
 	if !dead:
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if not is_on_floor():
+			velocity.y += gravity * delta
+		elif Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = jump_power
 		
 		var direction := Input.get_axis("left", "right")
-		if direction:
-			velocity.x = direction * speed
-		else:
+		velocity.x = direction * speed
+		if direction ==0:
 			velocity.x = move_toward(velocity.x, 0, speed)
 		
 		if weapon_equip and !current_attack:

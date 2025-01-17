@@ -1,13 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://h5funuah41ix"]
+[gd_scene load_steps=12 format=3 uid="uid://h5funuah41ix"]
 
 [ext_resource type="Script" path="res://Scripts/stage_1.gd" id="1_cnl87"]
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_e3o1i"]
 [ext_resource type="Texture2D" uid="uid://cyvruub73wgwh" path="res://art/TileSet-36x36.png" id="2_diyot"]
-[ext_resource type="Script" path="res://Scenes/pickup_manager.gd" id="2_nh8l0"]
 [ext_resource type="PackedScene" uid="uid://qr1qmwwdvj8w" path="res://Scenes/player.tscn" id="3_yevh6"]
 [ext_resource type="PackedScene" uid="uid://bx5ey80xltn6k" path="res://Scenes/bat_enemy.tscn" id="5_57q7i"]
-[ext_resource type="PackedScene" uid="uid://6ybuysjy0ue7" path="res://Scripts/toxic_frog.tscn" id="6_dhseg"]
-[ext_resource type="PackedScene" path="res://Scenes/coin.tscn" id="7_apr26"]
+[ext_resource type="PackedScene" uid="uid://6ybuysjy0ue7" path="res://Scenes/toxic_frog.tscn" id="6_dhseg"]
+[ext_resource type="PackedScene" uid="uid://b4xho45ep6ufx" path="res://Scenes/coin.tscn" id="7_apr26"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6euve"]
 texture = ExtResource("2_diyot")
@@ -53,7 +52,6 @@ position = Vector2(1, 0)
 script = ExtResource("1_cnl87")
 
 [node name="PickupManager" type="Node" parent="."]
-script = ExtResource("2_nh8l0")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(112, -174)
