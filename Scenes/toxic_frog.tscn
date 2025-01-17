@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://6ybuysjy0ue7"]
 
-[ext_resource type="Script" path="res://toxic_frog.gd" id="1_ow64a"]
+[ext_resource type="Script" path="res://Scripts/toxic_frog.gd" id="1_ow64a"]
 [ext_resource type="Texture2D" uid="uid://b7gjt0grxogk" path="res://art/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Sheet.png" id="2_0g665"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nua8r"]
