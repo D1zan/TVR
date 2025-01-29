@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-class_name Player 
+class_name Player  
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var deal_damage_zone = $DealDamageZone
 
 const speed = 300.0
-const jump_power = -350.0
+const jump_power = -350.0 
 
 var gravity = 900
 
@@ -35,16 +35,15 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	weapon_equip = Global.playerWeaponEquipped
 	Global.playerDamageZone = deal_damage_zone
-	if not is_on_floor():
-		velocity.y += gravity * delta
 	if !dead:
-		if Input.is_action_just_pressed("jump") and is_on_floor():
+		if not is_on_floor():
+			velocity.y += gravity * delta
+		elif Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = jump_power
 		
 		var direction := Input.get_axis("left", "right")
-		if direction:
-			velocity.x = direction * speed
-		else:
+		velocity.x = direction * speed
+		if direction ==0:
 			velocity.x = move_toward(velocity.x, 0, speed)
 		
 		if weapon_equip and !current_attack:
@@ -61,6 +60,7 @@ func _physics_process(delta: float) -> void:
 		handle_movement_animation(direction)
 		check_hitbox()
 	move_and_slide()
+	update_health()
 
 func check_hitbox():
 	var hitbox_areas = $PlayerHitbox.get_overlapping_areas()
@@ -160,3 +160,12 @@ func set_damage(attack_type):
 	elif attack_type == "air":
 		current_damage_to_deal = 20
 	Global.playerDamageAmount = current_damage_to_deal
+	
+func update_health():
+	var healthbar = $healthbar
+	healthbar.value = health
+	
+	if health >= 100:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true

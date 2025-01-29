@@ -1,6 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://w5hjsiiy717c"]
+[gd_scene load_steps=41 format=3 uid="uid://6ybuysjy0ue7"]
 
-[ext_resource type="Script" path="res://toxic_frog.gd" id="1_ow64a"]
+[ext_resource type="Script" path="res://Scripts/toxic_frog.gd" id="1_ow64a"]
 [ext_resource type="Texture2D" uid="uid://b7gjt0grxogk" path="res://art/ToxicFrog/PurpleBlue/ToxicFrogPurpleBlue_Sheet.png" id="2_0g665"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nua8r"]
@@ -300,6 +300,16 @@ shape = SubResource("CircleShape2D_jsa10")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="frogDealDamageArea"]
 shape = SubResource("CircleShape2D_nsxlt")
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 0, 1)
+self_modulate = Color(0, 1, 0, 1)
+offset_left = -28.0
+offset_top = -21.0
+offset_right = 29.0
+offset_bottom = -12.0
+max_value = 80.0
+show_percentage = false
 
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
 [connection signal="area_entered" from="froghitbox" to="." method="_on_froghitbox_area_entered"]
