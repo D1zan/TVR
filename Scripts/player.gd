@@ -20,6 +20,9 @@ var health_min = 0
 var can_take_damage: bool
 var dead:bool
 
+var fireball_cooldown = true
+var fireball = preload("res://fireball.gd")
+
 
 func _ready():
 	Global.playerBody = self

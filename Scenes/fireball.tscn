@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://c42kws42dt2bh"]
+
+[ext_resource type="Script" path="res://fireball.gd" id="1_3exru"]
+[ext_resource type="Texture2D" uid="uid://dgnc61t1vnh75" path="res://art/OIP__1_-removebg-preview.png" id="2_q2u4r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clera"]
+atlas = ExtResource("2_q2u4r")
+region = Rect2(0, 0, 79, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wle6k"]
+atlas = ExtResource("2_q2u4r")
+region = Rect2(79, 0, 79, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctlui"]
+atlas = ExtResource("2_q2u4r")
+region = Rect2(158, 0, 79, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guluu"]
+atlas = ExtResource("2_q2u4r")
+region = Rect2(237, 0, 79, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we1yu"]
+atlas = ExtResource("2_q2u4r")
+region = Rect2(316, 0, 79, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b08s"]
+atlas = ExtResource("2_q2u4r")
+region = Rect2(395, 0, 79, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5lyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clera")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wle6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctlui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guluu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we1yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b08s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jiin"]
+radius = 19.0263
+
+[node name="Fireball" type="CharacterBody2D"]
+script = ExtResource("1_3exru")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, 6.25)
+scale = Vector2(0.708861, 0.801587)
+sprite_frames = SubResource("SpriteFrames_o5lyf")
+frame_progress = 0.789608
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-19, 14)
+shape = SubResource("CircleShape2D_3jiin")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-15.5, 13)
+scale = Vector2(0.45, 1)

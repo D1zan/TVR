@@ -8,6 +8,7 @@ offset_bottom = 41.0
 metadata/_edit_group_ = true
 
 [node name="CoinLabel" type="Label" parent="."]
+layout_mode = 0
 offset_right = 52.0
 offset_bottom = 23.0
 text = "Score: "
