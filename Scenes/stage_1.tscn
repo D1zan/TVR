@@ -101,7 +101,6 @@ position = Vector2(-83, -6)
 [node name="Coin2" parent="." instance=ExtResource("7_apr26")]
 position = Vector2(-29, -32)
 
-
 [node name="scene_change" type="Area2D" parent="."]
 
 [node name="rightwall" type="CollisionShape2D" parent="scene_change"]
@@ -117,4 +116,3 @@ position = Vector2(60, -54)
 [node name="BatEnemy2" parent="." groups=["enemies"] instance=ExtResource("5_57q7i")]
 
 [connection signal="body_entered" from="scene_change" to="." method="_on_scene_change_body_entered"]
-
