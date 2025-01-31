@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://h5funuah41ix"]
+[gd_scene load_steps=14 format=3 uid="uid://h5funuah41ix"]
 
 [ext_resource type="Script" path="res://Scripts/stage_1.gd" id="1_cnl87"]
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_e3o1i"]
@@ -48,6 +48,9 @@ size = Vector2(377.422, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_waxq8"]
 size = Vector2(20, 128.51)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xafrj"]
+size = Vector2(20, 192)
+
 [node name="stage1" type="Node2D"]
 position = Vector2(1, 0)
 script = ExtResource("1_cnl87")
@@ -84,14 +87,6 @@ shape = SubResource("RectangleShape2D_waxq8")
 [node name="Player" parent="." instance=ExtResource("3_yevh6")]
 position = Vector2(-146, -35)
 
-[node name="toxicFrog" parent="." instance=ExtResource("6_dhseg")]
-position = Vector2(126, -49)
-
-[node name="BatEnemy" parent="." instance=ExtResource("5_57q7i")]
-position = Vector2(60, -54)
-
-[node name="BatEnemy2" parent="." instance=ExtResource("5_57q7i")]
-
 [node name="BatOnlyCollision" type="StaticBody2D" parent="."]
 collision_layer = 2
 collision_mask = 2
@@ -105,3 +100,19 @@ position = Vector2(-83, -6)
 
 [node name="Coin2" parent="." instance=ExtResource("7_apr26")]
 position = Vector2(-29, -32)
+
+[node name="scene_change" type="Area2D" parent="."]
+
+[node name="rightwall" type="CollisionShape2D" parent="scene_change"]
+position = Vector2(445, -107)
+shape = SubResource("RectangleShape2D_xafrj")
+
+[node name="toxicFrog" parent="." groups=["enemies"] instance=ExtResource("6_dhseg")]
+position = Vector2(126, -49)
+
+[node name="BatEnemy" parent="." groups=["enemies"] instance=ExtResource("5_57q7i")]
+position = Vector2(60, -54)
+
+[node name="BatEnemy2" parent="." groups=["enemies"] instance=ExtResource("5_57q7i")]
+
+[connection signal="body_entered" from="scene_change" to="." method="_on_scene_change_body_entered"]

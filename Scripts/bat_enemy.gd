@@ -19,6 +19,7 @@ var damage_to_deal = 10
 
 func _ready():
 	is_bat_chase = true
+	Global.batBody = self
 	
 func move(delta):
 	player = Global.playerBody
@@ -72,6 +73,7 @@ func handle_animation():
 		taking_damage = false
 	elif dead and is_roaming:
 		is_roaming = false
+		
 		animated_sprite.play("death")
 		set_collision_layer_value(1,true)
 		set_collision_layer_value(2, false)
@@ -105,3 +107,4 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
+		
