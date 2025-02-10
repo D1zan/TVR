@@ -21,7 +21,6 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://Scenes/lobby.tscn")
 	var enemies = get_tree().get_nodes_in_group("enemies").size()
 	if enemies == 0:
-		print("clear")
 		get_tree().change_scene_to_file("res://Scenes/stage_2.tscn")
 
 
