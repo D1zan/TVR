@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://h5funuah41ix"]
+[gd_scene load_steps=15 format=3 uid="uid://h5funuah41ix"]
 
 [ext_resource type="Script" path="res://Scripts/stage_1.gd" id="1_cnl87"]
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_e3o1i"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qr1qmwwdvj8w" path="res://Scenes/player.tscn" id="3_yevh6"]
 [ext_resource type="PackedScene" uid="uid://bx5ey80xltn6k" path="res://Scenes/bat_enemy.tscn" id="5_57q7i"]
 [ext_resource type="PackedScene" uid="uid://6ybuysjy0ue7" path="res://Scenes/toxic_frog.tscn" id="6_dhseg"]
+[ext_resource type="PackedScene" uid="uid://bhrgeatcnp1x" path="res://Scenes/coin_label.tscn" id="6_mia3f"]
 [ext_resource type="PackedScene" uid="uid://b4xho45ep6ufx" path="res://Scenes/coin.tscn" id="7_apr26"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6euve"]
@@ -114,5 +115,15 @@ position = Vector2(126, -49)
 position = Vector2(60, -54)
 
 [node name="BatEnemy2" parent="." groups=["enemies"] instance=ExtResource("5_57q7i")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+auto_translate_mode = 1
+follow_viewport_enabled = true
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("6_mia3f")]
+offset_left = -24.0
+offset_top = -163.0
+offset_right = 30.0
+offset_bottom = -122.0
 
 [connection signal="body_entered" from="scene_change" to="." method="_on_scene_change_body_entered"]

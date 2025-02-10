@@ -3,7 +3,7 @@ extends Node
 var score = 0
 
 
-@onready var coin_label = $"../Player/Camera2D/Control/CoinLabel"
+@onready var coin_label = $"../Player/CanvasLayer/Control/CoinLabel"
 
 
 func add_point():

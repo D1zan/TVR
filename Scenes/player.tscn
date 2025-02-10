@@ -448,12 +448,6 @@ limit_right = 461
 limit_bottom = 98
 position_smoothing_enabled = true
 
-[node name="Control" parent="Camera2D" instance=ExtResource("2_jjvpk")]
-offset_left = 97.0
-offset_top = -84.0
-offset_right = 151.0
-offset_bottom = -43.0
-
 [node name="DealDamageZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageZone"]
@@ -475,5 +469,15 @@ offset_top = -20.0
 offset_right = 19.0
 offset_bottom = -13.0
 show_percentage = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+auto_translate_mode = 1
+follow_viewport_enabled = true
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("2_jjvpk")]
+offset_left = -24.0
+offset_top = -163.0
+offset_right = 30.0
+offset_bottom = -122.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
