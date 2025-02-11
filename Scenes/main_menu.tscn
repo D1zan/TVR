@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dffdq3xjcuq2u"]
+[gd_scene load_steps=12 format=3 uid="uid://csi1m47mbqmhv"]
 
 [ext_resource type="Texture2D" uid="uid://dmgb2uy64j34d" path="res://art/Screenshot 2024-12-19 at 8.56.21 AM.png" id="1_k4nn1"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_tyktx"]
 [ext_resource type="FontFile" uid="uid://fpnyq24ntpjd" path="res://art/Martyric_PersonalUse.ttf" id="2_qrmvk"]
 [ext_resource type="Texture2D" uid="uid://ba6srdewhhdhc" path="res://art/TIMMYVROBOTS.png" id="3_ke78g"]
+[ext_resource type="Script" path="res://Scenes/button.gd" id="3_pyyeh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m2onm"]
 texture = ExtResource("1_k4nn1")
@@ -58,6 +59,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_m2onm")
@@ -91,6 +94,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dbrsv")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_o637x")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6dxeg")
 text = "Enter Lobby"
+script = ExtResource("3_pyyeh")
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 texture_filter = 1
@@ -144,6 +148,14 @@ offset_top = 60.0
 offset_right = 825.0
 offset_bottom = 240.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_cajec")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1007.0
+offset_top = 7.0
+offset_right = 1279.0
+offset_bottom = 74.0
+text = "Build date 1.31.25"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
