@@ -439,7 +439,10 @@ limit_right = 461
 limit_bottom = 98
 position_smoothing_enabled = true
 
-[node name="Control" parent="Camera2D" instance=ExtResource("2_jjvpk")]
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+follow_viewport_enabled = true
+
+[node name="Control" parent="Camera2D/CanvasLayer" instance=ExtResource("2_jjvpk")]
 offset_left = 105.0
 offset_top = -132.0
 offset_right = 159.0

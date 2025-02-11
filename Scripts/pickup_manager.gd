@@ -3,7 +3,7 @@ extends Node
 
 
 
-@onready var coin_label = $"../Player/CanvasLayer/Control/CoinLabel"
+@onready var coin_label = $"../Player/Camera2D/CanvasLayer/Control/CoinLabel"
 
 
 func _ready():

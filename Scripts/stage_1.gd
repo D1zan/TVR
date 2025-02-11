@@ -15,6 +15,7 @@ func _ready():
 	player_camera.enabled = true
 	Global.playerWeaponEquipped = true
 	_on_something_happened(player_camera2)
+	
 func _process(delta):
 	if !Global.playerAlive:
 		Global.gameStarted = false
