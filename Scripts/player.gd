@@ -47,7 +47,6 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, speed)
 			var player_pos =  deal_damage_zone.position
 			$Marker2D.look_at(player_pos)
-			print(player_pos)
 		if weapon_equip and !current_attack:
 			if Input.is_action_just_pressed("left_mouse") or Input.is_action_just_pressed("right_mouse"):
 				current_attack = true
@@ -177,4 +176,3 @@ func _ready2():
 		player = get_node("DealDamageZone")
 		
 		var player_pos =  deal_damage_zone.position
-		print(player_pos)
