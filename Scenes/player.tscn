@@ -440,10 +440,10 @@ limit_bottom = 98
 position_smoothing_enabled = true
 
 [node name="Control" parent="Camera2D" instance=ExtResource("2_jjvpk")]
-offset_left = 97.0
-offset_top = -84.0
-offset_right = 151.0
-offset_bottom = -43.0
+offset_left = 105.0
+offset_top = -132.0
+offset_right = 159.0
+offset_bottom = -91.0
 
 [node name="stage2_cam" type="Camera2D" parent="."]
 position = Vector2(-2, -1)
@@ -475,5 +475,7 @@ offset_top = -20.0
 offset_right = 19.0
 offset_bottom = -13.0
 show_percentage = false
+
+[node name="Marker2D" type="Marker2D" parent="."]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

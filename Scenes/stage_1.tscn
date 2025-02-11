@@ -82,7 +82,7 @@ position = Vector2(192.578, -60.1016)
 shape = SubResource("RectangleShape2D_waxq8")
 
 [node name="Player" parent="." instance=ExtResource("3_yevh6")]
-position = Vector2(-146, -35)
+position = Vector2(-143, -36)
 
 [node name="toxicFrog" parent="." instance=ExtResource("6_dhseg")]
 position = Vector2(126, -49)

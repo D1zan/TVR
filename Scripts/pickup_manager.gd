@@ -1,15 +1,20 @@
 extends Node
 
-var score = 0
+
 
 
 @onready var coin_label = $"../Player/Camera2D/Control/CoinLabel"
 
 
+func _ready():
+	update_score_label()
+	
 func add_point():
-	score += 1
-	print(score)
-	coin_label.text = "Score: " + str(score)
+	Global.add_point()
+	update_score_label()
+	
+func update_score_label():
+	coin_label.text = "Score: " + str(Global.score)
 	
 		 
 	
