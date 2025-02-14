@@ -153,8 +153,8 @@ size = Vector2(30, 125)
 script = ExtResource("1_ksaoy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(76, -78.25)
-scale = Vector2(1.21118, 1.09236)
+position = Vector2(75.5, -97.7498)
+scale = Vector2(1.30124, 1.34077)
 texture = ExtResource("1_h74ma")
 
 [node name="arena" type="TileMap" parent="."]
@@ -184,10 +184,30 @@ position = Vector2(62, 2)
 scale = Vector2(4, 4)
 
 [node name="toxicFrog" parent="." instance=ExtResource("5_8rq5a")]
+
 position = Vector2(75, -22)
 script = null
+
 
 [node name="BatEnemy" parent="." instance=ExtResource("6_fi76h")]
 position = Vector2(90, -81)
 
 [node name="BatEnemy2" parent="." instance=ExtResource("6_fi76h")]
+position = Vector2(122, -58)
+
+[node name="BatCollision" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(10, -88)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BatCollision"]
+polygon = PackedVector2Array(-192, 126, 237, 69, 239, -20, 183, -71, 50, -73, -122, -71, -115, -38, -115, 41, -181, 40, -184, 77, -129, 73, -154, 126, -18, 142, 182, 146, 264, 106, 297, 13, 279, -84, 105, -103, -84, -92, -173, -73, -185, -29, -179, 15, -158, 28)
+
+[node name="BatOnlyCollision" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BatOnlyCollision"]
+position = Vector2(11, -10)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-243, -24, -44, -23, 469, -22, 464, -191, 461, -310, 454, -379, 327, -369, 196, -378, 56, -381, -70, -378, -194, -372, -255, -229, -244, -49, -315, -51, -244, -392, -37, -430, 186, -439, 509, -442, 561, 62, 344, 95, -39, 103, -337, 43, -246, -19)
+one_way_collision_margin = 0.0
