@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bc3m5s5vwtiiy"]
+[gd_scene load_steps=12 format=3 uid="uid://biloe7s0eoijc"]
 
 [ext_resource type="Script" path="res://Scenes/stage_3.gd" id="1_i0eh4"]
 [ext_resource type="Texture2D" uid="uid://c63qcx33xicn7" path="res://art/brackeys_platformer_assets/sprites/sand.jpg" id="2_8gko4"]
