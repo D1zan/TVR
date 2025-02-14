@@ -437,15 +437,6 @@ limit_right = 461
 limit_bottom = 98
 position_smoothing_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
-follow_viewport_enabled = true
-
-[node name="Control" parent="Camera2D/CanvasLayer" instance=ExtResource("2_jjvpk")]
-offset_left = 105.0
-offset_top = -132.0
-offset_right = 159.0
-offset_bottom = -91.0
-
 [node name="stage2_cam" type="Camera2D" parent="."]
 position = Vector2(-2, -1)
 zoom = Vector2(4, 4)
@@ -454,6 +445,15 @@ limit_top = -159
 limit_right = 271
 limit_bottom = 29
 position_smoothing_enabled = true
+
+[node name="stage3_cam" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 1
+limit_top = -183
+limit_right = 495
+limit_bottom = 19
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
 [node name="DealDamageZone" type="Area2D" parent="."]
 
@@ -478,5 +478,14 @@ offset_bottom = -13.0
 show_percentage = false
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("2_jjvpk")]
+offset_left = 105.0
+offset_top = -132.0
+offset_right = 159.0
+offset_bottom = -91.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

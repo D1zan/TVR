@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://swp4goyhvm2b"]
+[gd_scene load_steps=12 format=3 uid="uid://bc3m5s5vwtiiy"]
 
 [ext_resource type="Script" path="res://Scenes/stage_3.gd" id="1_i0eh4"]
 [ext_resource type="Texture2D" uid="uid://c63qcx33xicn7" path="res://art/brackeys_platformer_assets/sprites/sand.jpg" id="2_8gko4"]
@@ -176,17 +176,20 @@ shape = SubResource("RectangleShape2D_e4uec")
 position = Vector2(495, -89)
 shape = SubResource("RectangleShape2D_dc8no")
 
-[node name="Player" parent="collisions" instance=ExtResource("4_j068b")]
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(252, 19)
+
+[node name="Player" parent="." instance=ExtResource("4_j068b")]
 position = Vector2(68, -38)
 
-[node name="BatEnemy" parent="collisions" instance=ExtResource("5_2jk5i")]
+[node name="BatEnemy" parent="." groups=["enemies"] instance=ExtResource("5_2jk5i")]
 position = Vector2(179, -130)
 
-[node name="BatEnemy2" parent="collisions" instance=ExtResource("5_2jk5i")]
+[node name="BatEnemy2" parent="." groups=["enemies"] instance=ExtResource("5_2jk5i")]
 position = Vector2(232, -77)
 
-[node name="BatEnemy3" parent="collisions" instance=ExtResource("5_2jk5i")]
+[node name="BatEnemy3" parent="." groups=["enemies"] instance=ExtResource("5_2jk5i")]
 position = Vector2(54, -93)
 
-[node name="toxicFrog" parent="collisions" instance=ExtResource("6_7ln71")]
+[node name="toxicFrog" parent="." groups=["enemies"] instance=ExtResource("6_7ln71")]
 position = Vector2(427, -29)
