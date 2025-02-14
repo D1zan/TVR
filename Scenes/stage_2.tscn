@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://mx3i168fcdb6"]
+[gd_scene load_steps=12 format=3 uid="uid://dsfnwcuub47tb"]
 
 [ext_resource type="Texture2D" uid="uid://suytxgu4dr2b" path="res://art/download.jpeg" id="1_h74ma"]
 [ext_resource type="Texture2D" uid="uid://b4d4jux37dwgc" path="res://art/brackeys_platformer_assets/sprites/world_tileset.png" id="1_idx2c"]
 [ext_resource type="Script" path="res://Scenes/stage_2.gd" id="1_ksaoy"]
 [ext_resource type="PackedScene" uid="uid://qr1qmwwdvj8w" path="res://Scenes/player.tscn" id="2_vjpyr"]
-[ext_resource type="PackedScene" uid="uid://6ybuysjy0ue7" path="res://Scenes/toxic_frog.tscn" id="5_8rq5a"]
+[ext_resource type="PackedScene" uid="uid://w5hjsiiy717c" path="res://Scripts/toxic_frog.tscn" id="5_8rq5a"]
 [ext_resource type="PackedScene" uid="uid://bx5ey80xltn6k" path="res://Scenes/bat_enemy.tscn" id="6_fi76h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bvaf2"]
@@ -184,7 +184,10 @@ position = Vector2(62, 2)
 scale = Vector2(4, 4)
 
 [node name="toxicFrog" parent="." instance=ExtResource("5_8rq5a")]
-position = Vector2(75, -31)
+
+position = Vector2(75, -22)
+script = null
+
 
 [node name="BatEnemy" parent="." instance=ExtResource("6_fi76h")]
 position = Vector2(90, -81)

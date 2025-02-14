@@ -1,7 +1,10 @@
 extends Node
 
 
-
+var score: int = 0
+func add_point():
+	score +=1
+	print("Global Score:", score)
 var gameStarted: bool
 var playerBody: CharacterBody2D
 var playerWeaponEquipped: bool

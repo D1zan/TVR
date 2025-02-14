@@ -60,15 +60,17 @@ radius = 19.0263
 script = ExtResource("1_3exru")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(-10, 6.25)
+position = Vector2(-102, 38)
 scale = Vector2(0.708861, 0.801587)
 sprite_frames = SubResource("SpriteFrames_o5lyf")
-frame_progress = 0.299153
+frame_progress = 0.57819
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-19, 14)
+position = Vector2(-112, 45)
 shape = SubResource("CircleShape2D_3jiin")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(-15.5, 13)
-scale = Vector2(0.45, 1)
+position = Vector2(-111.75, 47)
+scale = Vector2(0.575, 1)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

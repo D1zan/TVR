@@ -15,15 +15,15 @@ func _ready():
 	player_camera.enabled = true
 	Global.playerWeaponEquipped = true
 	_on_something_happened(player_camera2)
+	
 func _process(delta):
-	if !Global.playerAlive:
-		Global.gameStarted = false
-		#get_tree().change_scene_to_file("res://Scenes/lobby.tscn")
-		
-	var enemies = get_tree().get_nodes_in_group("enemies").size()
-	if enemies == 0:
+	var clear = get_tree().get_nodes_in_group("enemies").size()
+	if clear == 0:
 		print("clear")
 		get_tree().change_scene_to_file("res://Scenes/stage_2.tscn")
+	if !Global.playerAlive:
+		Global.gameStarted = false
+		get_tree().change_scene_to_file("res://Scenes/lobby.tscn")
 
 
 

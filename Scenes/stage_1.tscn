@@ -85,7 +85,7 @@ position = Vector2(192.578, -60.1016)
 shape = SubResource("RectangleShape2D_waxq8")
 
 [node name="Player" parent="." instance=ExtResource("3_yevh6")]
-position = Vector2(-146, -35)
+position = Vector2(-143, -36)
 
 [node name="BatOnlyCollision" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -100,7 +100,6 @@ position = Vector2(-83, -6)
 
 [node name="Coin2" parent="." instance=ExtResource("7_apr26")]
 position = Vector2(-29, -32)
-
 
 [node name="scene_change" type="Area2D" parent="."]
 
@@ -117,4 +116,3 @@ position = Vector2(60, -54)
 [node name="BatEnemy2" parent="." groups=["enemies"] instance=ExtResource("5_57q7i")]
 
 [connection signal="body_entered" from="scene_change" to="." method="_on_scene_change_body_entered"]
-
