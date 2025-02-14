@@ -14,7 +14,7 @@ func _ready():
 func _process(delta):
 	var clear = get_tree().get_nodes_in_group("enemies").size()
 	if clear == 0:
-		get_tree().change_scene_to_file("res://Scenes/stage_2.tscn")
+		get_tree().change_scene_to_file("res://Scenes/lobby.tscn")
 	if !Global.playerAlive:
 		Global.gameStarted = false
 		get_tree().change_scene_to_file("res://Scenes/lobby.tscn")
