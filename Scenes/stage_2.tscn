@@ -153,8 +153,8 @@ size = Vector2(30, 125)
 script = ExtResource("1_ksaoy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(76, -78.25)
-scale = Vector2(1.21118, 1.09236)
+position = Vector2(75.5, -97.7498)
+scale = Vector2(1.30124, 1.34077)
 texture = ExtResource("1_h74ma")
 
 [node name="arena" type="TileMap" parent="."]
