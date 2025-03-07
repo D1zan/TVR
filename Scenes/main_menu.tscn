@@ -126,6 +126,6 @@ offset_left = 1007.0
 offset_top = 7.0
 offset_right = 1279.0
 offset_bottom = 74.0
-text = "Build date 1.31.25"
+text = "Build date 2.14.25"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
