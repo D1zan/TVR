@@ -1,7 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://lw8edyskij6q"]
+[gd_scene load_steps=7 format=3 uid="uid://duoltooxnu2wx"]
 
 [ext_resource type="Script" path="res://Scenes/button.gd" id="1_eunc4"]
-[ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="1_kak7t"]
+
+[sub_resource type="GDScript" id="GDScript_iihrc"]
+script/source = "extends Control
+
+
+func resume():
+	get_tree().paused = false
+	
+func pause():
+	get_tree().paused = true
+	
+func testEsc():
+	if Input.is_action_just_pressed(\"esc\") and !get_tree().paused:
+		pause()
+	elif Input.is_action_just_pressed(\"esc\") and !get_tree().paused:
+		resume()
+
+
+func _on_resume_pressed() -> void:
+	resume()
+
+
+func _on_settings_pressed() -> void:
+	print(\"Settings\")
+
+
+func _on_returntomenu_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/main_menu.tscn\")
+"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3hf2"]
 
@@ -42,7 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kak7t")
+script = SubResource("GDScript_iihrc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
