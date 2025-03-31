@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dffdq3xjcuq2u"]
+[gd_scene load_steps=12 format=3 uid="uid://csi1m47mbqmhv"]
 
 [ext_resource type="Texture2D" uid="uid://dmgb2uy64j34d" path="res://art/Screenshot 2024-12-19 at 8.56.21 AM.png" id="1_k4nn1"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_tyktx"]
@@ -72,13 +72,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -240.5
-offset_top = -50.0
-offset_right = 240.5
-offset_bottom = 166.0
+offset_left = -207.0
+offset_top = -44.0
+offset_right = 207.0
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 14
+alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 texture_filter = 1
@@ -95,36 +96,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_o637x")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6dxeg")
 text = "Enter Lobby"
 script = ExtResource("3_pyyeh")
-
-[node name="Button2" type="Button" parent="VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sw5d6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dbrsv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_o637x")
-theme_override_styles/normal = SubResource("StyleBoxFlat_6dxeg")
-text = "Options"
-
-[node name="Button3" type="Button" parent="VBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 27
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sw5d6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dbrsv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_o637x")
-theme_override_styles/normal = SubResource("StyleBoxFlat_6dxeg")
-text = "Exit"
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -155,8 +126,6 @@ offset_left = 1007.0
 offset_top = 7.0
 offset_right = 1279.0
 offset_bottom = 74.0
-text = "Build date 1.31.25"
+text = "Build date 2.14.25"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

@@ -9,11 +9,10 @@ func _on_something_happened(node_to_destroy):
 
 func _ready():
 	
-	player_camera.enabled = true
+	player_camera3.enabled = true
 	Global.playerWeaponEquipped = true
 	_on_something_happened(player_camera)
 	_on_something_happened(player_camera3)
-
 func _process(delta):
 	var clear = get_tree().get_nodes_in_group("enemies").size()
 	if clear == 0:

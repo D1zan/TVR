@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b4d4jux37dwgc" path="res://art/brackeys_platformer_assets/sprites/world_tileset.png" id="1_idx2c"]
 [ext_resource type="Script" path="res://Scenes/stage_2.gd" id="1_ksaoy"]
 [ext_resource type="PackedScene" uid="uid://qr1qmwwdvj8w" path="res://Scenes/player.tscn" id="2_vjpyr"]
-[ext_resource type="PackedScene" uid="uid://w5hjsiiy717c" path="res://Scripts/toxic_frog.tscn" id="5_8rq5a"]
 [ext_resource type="PackedScene" uid="uid://bx5ey80xltn6k" path="res://Scenes/bat_enemy.tscn" id="6_fi76h"]
+[ext_resource type="PackedScene" uid="uid://6ybuysjy0ue7" path="res://Scenes/toxic_frog.tscn" id="6_w3afg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bvaf2"]
 texture = ExtResource("1_idx2c")
@@ -153,8 +153,8 @@ size = Vector2(30, 125)
 script = ExtResource("1_ksaoy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(76, -78.25)
-scale = Vector2(1.21118, 1.09236)
+position = Vector2(75.5, -97.7498)
+scale = Vector2(1.30124, 1.34077)
 texture = ExtResource("1_h74ma")
 
 [node name="arena" type="TileMap" parent="."]
@@ -179,15 +179,11 @@ shape = SubResource("RectangleShape2D_xv7i6")
 [node name="Player" parent="." instance=ExtResource("2_vjpyr")]
 position = Vector2(-62, -41)
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(62, 2)
-scale = Vector2(4, 4)
-
-[node name="toxicFrog" parent="." instance=ExtResource("5_8rq5a")]
-position = Vector2(75, -22)
-script = null
-
-[node name="BatEnemy" parent="." instance=ExtResource("6_fi76h")]
+[node name="BatEnemy" parent="." groups=["enemies"] instance=ExtResource("6_fi76h")]
 position = Vector2(90, -81)
 
-[node name="BatEnemy2" parent="." instance=ExtResource("6_fi76h")]
+[node name="BatEnemy2" parent="." groups=["enemies"] instance=ExtResource("6_fi76h")]
+position = Vector2(42, -79)
+
+[node name="toxicFrog" parent="." groups=["enemies"] instance=ExtResource("6_w3afg")]
+position = Vector2(126, -49)
