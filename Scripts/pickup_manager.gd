@@ -16,5 +16,6 @@ func add_point():
 func update_score_label():
 	coin_label.text = "Score: " + str(Global.score)
 	
+	
 		 
 	

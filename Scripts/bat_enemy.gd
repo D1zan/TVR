@@ -95,6 +95,8 @@ func take_damage(damage):
 	health -= damage
 	taking_damage = true
 	if health <= 0:
+		Global.add_point()
+		update_score_label()
 		health = 0
 		dead = true
 	print(str(self), "current health is ", health)
@@ -107,4 +109,10 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
+		
+		
+@onready var coin_label = $"../Player/Camera2D/CanvasLayer/Control/CoinLabel"		
+		
+func update_score_label():
+	coin_label.text = "Score: " + str(Global.score)
 		

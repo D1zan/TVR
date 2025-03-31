@@ -177,4 +177,3 @@ func _ready2():
 		player = get_node("DealDamageZone")
 		
 		var player_pos =  deal_damage_zone.position
-		print(player_pos)
