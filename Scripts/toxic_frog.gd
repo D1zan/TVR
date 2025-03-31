@@ -12,7 +12,7 @@ var health_min = 0
 
 var dead: bool = false
 var taking_damage: bool = false
-var damage_to_deal = 20
+var damage_to_deal = 10
 var is_dealing_damage: bool = false
 
 var dir: Vector2

@@ -15,7 +15,7 @@ var health_min = 0
 var dead = false 
 var taking_damage = false
 var is_roaming: bool
-var damage_to_deal = 10
+var damage_to_deal = 5
 
 func _ready():
 	is_bat_chase = true

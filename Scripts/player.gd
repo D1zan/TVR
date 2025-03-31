@@ -13,8 +13,8 @@ var attack_type: String
 var current_attack: bool
 var weapon_equip: bool
 
-var health = 100
-var health_max = 100
+var health = 110
+var health_max = 110
 var health_min = 0
 var can_take_damage: bool
 var dead:bool
