@@ -35,7 +35,10 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	update_health()
 
+#the ! makes the function or if statement opposite 
 func move(delta):
+#If the player is not dead AND if the frog chase
+#if the player is not chasing the frog!!!!!!
 	if !dead:
 		if !is_frog_chase:
 			velocity += dir * speed * delta
@@ -66,8 +69,10 @@ func handle_animation():
 		anim_sprite.play("death")
 		await get_tree().create_timer(1.0).timeout 
 		handle_death()
+	
 func handle_death():
 	self.queue_free() 
+#function will kill player 
 func _on_direction_timer_timeout() -> void:
 	$DirectionTimer.wait_time = choose([1.5,2.0,2.5])
 	if !is_frog_chase:
@@ -102,8 +107,6 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
-		
-		
 		
 @onready var coin_label = $"../Player/Camera2D/CanvasLayer/Control/CoinLabel"				
 		

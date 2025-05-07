@@ -419,6 +419,9 @@ radius = 5.0
 height = 22.0
 
 [node name="Player" type="CharacterBody2D"]
+physics_interpolation_mode = 1
+texture_filter = 1
+texture_repeat = 3
 script = ExtResource("1_v2xpx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -431,29 +434,11 @@ shape = SubResource("CircleShape2D_a72e4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
+process_callback = 0
 limit_left = -245
 limit_top = -252
 limit_right = 461
 limit_bottom = 98
-position_smoothing_enabled = true
-
-[node name="stage2_cam" type="Camera2D" parent="."]
-position = Vector2(-2, -1)
-zoom = Vector2(4, 4)
-limit_left = -127
-limit_top = -159
-limit_right = 271
-limit_bottom = 29
-position_smoothing_enabled = true
-
-[node name="stage3_cam" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-limit_left = 1
-limit_top = -183
-limit_right = 495
-limit_bottom = 19
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
 
 [node name="DealDamageZone" type="Area2D" parent="."]
 
@@ -487,5 +472,8 @@ offset_left = 105.0
 offset_top = -132.0
 offset_right = 159.0
 offset_bottom = -91.0
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(-13, -1)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

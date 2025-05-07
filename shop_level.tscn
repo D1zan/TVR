@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr0jq46qld0jn"]
+
+[ext_resource type="Texture2D" uid="uid://b84vb0al01hfp" path="res://art/BlockWithShade.png" id="1_7u6cc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BlockWithShade" type="Sprite2D" parent="."]
+position = Vector2(-759, 981)
+scale = Vector2(0.888393, 0.742188)
+texture = ExtResource("1_7u6cc")
+
+[node name="TileMap" type="TileMap" parent="BlockWithShade"]
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="BlockWithShade/TileMap"]

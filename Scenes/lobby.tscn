@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bklatwqm2ra6y"]
+[gd_scene load_steps=18 format=3 uid="uid://bklatwqm2ra6y"]
 
 [ext_resource type="Texture2D" uid="uid://bix1ymkq03exl" path="res://art/Background.png" id="1_s25cb"]
 [ext_resource type="Script" path="res://Scripts/lobby.gd" id="1_wvlxn"]
@@ -74,6 +74,9 @@ sources/0 = SubResource("TileSetAtlasSource_u0on4")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x36gl"]
 size = Vector2(58, 187)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3q7du"]
+size = Vector2(58, 51)
+
 [node name="Lobby" type="Node2D"]
 script = ExtResource("1_wvlxn")
 
@@ -83,12 +86,12 @@ script = ExtResource("2_irj6g")
 [node name="Sprites" type="StaticBody2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Sprites"]
-position = Vector2(99, -48)
+position = Vector2(103, -51)
 scale = Vector2(1.52632, 1.152)
 texture = ExtResource("1_s25cb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprites/Background"]
-position = Vector2(121.862, 17.3611)
+position = Vector2(117.931, 20.8333)
 scale = Vector2(0.17138, 0.202257)
 texture = ExtResource("4_2666w")
 
@@ -104,7 +107,7 @@ tile_set = SubResource("TileSet_d0a5d")
 format = 2
 layer_0/tile_data = PackedInt32Array(65535, 131072, 1, 0, 131072, 1, 1, 131072, 1, -65535, 196608, 0, -1, 131072, 0, 2, 196608, 1, 3, 196608, 1, 65534, 196608, 1, 65533, 196608, 1, 65532, 131072, 1, 65531, 131072, 1, 65530, 65536, 1, 131066, 65536, 2, 65540, 262144, 2, 131067, 131072, 2, 131068, 131072, 2, 131069, 131072, 2, 131070, 131072, 2, 131071, 131072, 2, 65536, 196608, 2, 65537, 196608, 2, 65538, 196608, 2, 65539, 196608, 2, 131075, 196608, 2, 131074, 196608, 2, 131073, 196608, 2, 196602, 65536, 3, 131076, 262144, 4, 196607, 131072, 2, 196606, 131072, 2, 196604, 131072, 2, 131072, 196608, 2, 196605, 196608, 2, 196603, 196608, 2, -5, 327680, 1, -4, 327680, 1, -65541, 327680, 1, -3, 393216, 1, -2, 393216, 1, 4, 196608, 1, 5, 196608, 1, 6, 196608, 1, 7, 196608, 1, 8, 196608, 1, 9, 196608, 1, 10, 196608, 1, 11, 196608, 1, -65530, 327680, 1, -131066, 327680, 1)
 
-[node name="House1" type="Sprite2D" parent="Sprites"]
+[node name="House1" type="Sprite2D" parent="Sprites/Groundtilemap"]
 position = Vector2(76, -82)
 texture = ExtResource("4_x1g2t")
 
@@ -115,11 +118,14 @@ texture = ExtResource("5_q0bf6")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(5, -4)
-polygon = PackedVector2Array(354, 7, 382, 7, 382, 94, 389, 94, 377, -194, 405, -183, 402, 113, -245, 98, -203, -209, -177, -208, -177, 5)
+position = Vector2(39, -5)
+scale = Vector2(0.748516, 0.544158)
+polygon = PackedVector2Array(354, 7, 382, 7, 405, 143, 443.544, 91.8852, 466.256, -161.718, 484.959, -183.77, 492.975, 181.933, -301.931, 113.938, -292.579, -218.687, -251.164, -196.634, -277.883, 14.7016, 137.606, 14.7016)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(163, -62)
+visible = false
+texture_filter = 1
+position = Vector2(128, -64)
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 script = SubResource("GDScript_ejmiq")
@@ -134,6 +140,12 @@ position = Vector2(398, -91)
 shape = SubResource("RectangleShape2D_x36gl")
 
 [node name="Coin" parent="." instance=ExtResource("8_ujr58")]
-position = Vector2(123, -5)
+position = Vector2(-1010, -319)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(285, -25.5)
+shape = SubResource("RectangleShape2D_3q7du")
+metadata/_edit_lock_ = true
+
+[connection signal="child_entered_tree" from="Sprites/Groundtilemap/House1" to="." method="_on_house_1_child_entered_tree"]
 [connection signal="body_entered" from="LoadDetect" to="." method="_on_load_detect_body_entered"]

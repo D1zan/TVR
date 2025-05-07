@@ -30,8 +30,8 @@ func _process(delta):
 
 
 
-#func _on_scene_change_body_entered(body):
-	#var enemies = get_tree().get_nodes_in_group("enemies").size()
-	#if enemies == 0:
-		#print("clear")
-		#get_tree().change_scene_to_file("res://Scenes/stage_2.tscn")
+func _on_scene_change_body_entered(body):
+	var enemies = get_tree().get_nodes_in_group("enemies").size()
+	if enemies == 0:
+		print("clear")
+		get_tree().change_scene_to_file("res://Scenes/stage_2.tscn")

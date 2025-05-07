@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scenes/stage_2.gd" id="1_ksaoy"]
 [ext_resource type="PackedScene" uid="uid://qr1qmwwdvj8w" path="res://Scenes/player.tscn" id="2_vjpyr"]
 [ext_resource type="PackedScene" uid="uid://bx5ey80xltn6k" path="res://Scenes/bat_enemy.tscn" id="6_fi76h"]
-[ext_resource type="PackedScene" path="res://Scenes/toxic_frog.tscn" id="6_w3afg"]
+[ext_resource type="PackedScene" uid="uid://6ybuysjy0ue7" path="res://Scenes/toxic_frog.tscn" id="6_w3afg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bvaf2"]
 texture = ExtResource("1_idx2c")
